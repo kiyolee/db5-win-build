@@ -221,7 +221,7 @@ static void randomFill(char *pBuf, int nByte){
   x = SQLITE_PTR_TO_INT(pBuf);
   y = nByte | 1;
   while( nByte >= 4 ){
-    x = (x>>1) ^ (-(x&1) & 0xd0000001);
+    x = (x>>1) ^ ((unsigned int)(-(int)(x&1)) & 0xd0000001);
     y = y*1103515245 + 12345;
     r = x ^ y;
     *(int*)pBuf = r;
@@ -229,7 +229,7 @@ static void randomFill(char *pBuf, int nByte){
     nByte -= 4;
   }
   while( nByte-- > 0 ){
-    x = (x>>1) ^ (-(x&1) & 0xd0000001);
+    x = (x>>1) ^ ((unsigned int)(-(int)(x&1)) & 0xd0000001);
     y = y*1103515245 + 12345;
     r = x ^ y;
     *(pBuf++) = r & 0xff;
