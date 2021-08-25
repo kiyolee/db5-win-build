@@ -616,7 +616,7 @@ int DbEnv::memp_fcreate(DbMpoolFile **dbmfp, u_int32_t flags)
 {
 	DB_ENV *dbenv = unwrap(this);
 	int ret;
-	DB_MPOOLFILE *mpf;
+	DB_MPOOLFILE *mpf = NULL;
 
 	if (dbenv == NULL)
 		ret = EINVAL;
@@ -1219,7 +1219,7 @@ int DbEnv::txn_recover(DbPreplist *preplist, long count,
     long *retp, u_int32_t flags)
 {
 	DB_ENV *dbenv = unwrap(this);
-	DB_PREPLIST *c_preplist;
+	DB_PREPLIST *c_preplist = NULL;
 	long i;
 	int ret;
 

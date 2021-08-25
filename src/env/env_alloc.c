@@ -392,7 +392,7 @@ __env_alloc_free(infop, ptr)
 	ALLOC_ELEMENT *elp, *elp_tmp;
 	ALLOC_LAYOUT *head;
 	ENV *env;
-	SIZEQ_HEAD *q;
+	SIZEQ_HEAD *q = NULL;
 	size_t len;
 	u_int8_t i, *p;
 
@@ -495,7 +495,7 @@ __env_alloc_extend(infop, ptr, lenp)
 	ALLOC_ELEMENT *elp, *elp_tmp;
 	ALLOC_LAYOUT *head;
 	ENV *env;
-	SIZEQ_HEAD *q;
+	SIZEQ_HEAD *q = NULL;
 	size_t len, tlen;
 	u_int8_t i, *p;
 	int ret;

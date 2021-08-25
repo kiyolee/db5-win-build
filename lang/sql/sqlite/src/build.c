@@ -1676,7 +1676,7 @@ void sqlite3CreateView(
   const char *z;
   Token sEnd;
   DbFixer sFix;
-  Token *pName;
+  Token *pName = NULL;
   int iDb;
   sqlite3 *db = pParse->db;
 

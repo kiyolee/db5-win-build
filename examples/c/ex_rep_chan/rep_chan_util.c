@@ -369,7 +369,7 @@ finish_support_threads(ckp_thr, lga_thr)
 	thread_t *ckp_thr;
 	thread_t *lga_thr;
 {
-	void *ctstatus, *ltstatus;
+	void *ctstatus = NULL, *ltstatus = NULL;
 	int ret;
 
 	ret = 0;

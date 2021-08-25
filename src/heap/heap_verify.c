@@ -122,7 +122,7 @@ __heap_vrfy(dbp, vdp, h, pgno, flags)
 {
 	HEAPHDR *hdr;
 	int cnt, i, j, ret;
-	db_indx_t *offsets, *offtbl, end;
+	db_indx_t *offsets = NULL, *offtbl, end;
 
 	if ((ret = __db_vrfy_datapage(dbp, vdp, h, pgno, flags)) != 0)
 		goto err;

@@ -40,7 +40,7 @@ main(argc, argv)
 	supthr_args supa;
 	machtab_t *machtab;
 	thread_t all_thr, ckp_thr, conn_thr, lga_thr;
-	void *astatus, *cstatus;
+	void *astatus = NULL, *cstatus = NULL;
 #ifdef _WIN32
 	WSADATA wsaData;
 #else

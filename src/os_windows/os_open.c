@@ -23,7 +23,7 @@ __os_open(env, name, page_size, flags, mode, fhpp)
 	DB_FH **fhpp;
 {
 	DB_ENV *dbenv;
-	DB_FH *fhp;
+	DB_FH *fhp = NULL;
 #ifndef DB_WINCE
 	DWORD cluster_size, sector_size, free_clusters, total_clusters;
 	_TCHAR *drive, dbuf[4]; /* <letter><colon><slash><nul> */

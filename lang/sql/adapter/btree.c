@@ -1437,7 +1437,7 @@ err:	return MAP_ERR(rc, ret, p);
 int btreeUpdateBtShared(Btree *p, int needLock)
 {
 	BtShared *pBt, *next_bt;
-	sqlite3_mutex *mutexOpen;
+	sqlite3_mutex *mutexOpen = NULL;
 	u_int8_t new_fileid[DB_FILE_ID_LEN];
 	char *filename;
 	int rc, ret;

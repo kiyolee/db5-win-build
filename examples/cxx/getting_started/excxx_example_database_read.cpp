@@ -114,7 +114,7 @@ show_item(MyDb &itemnameSDB, MyDb &vendorDB, std::string &itemName)
 {
 
     // Get a cursor to the itemname secondary db
-    Dbc *cursorp;
+    Dbc *cursorp = NULL;
 
     try {
         itemnameSDB.getDb().cursor(NULL, &cursorp, 0);
@@ -162,7 +162,7 @@ show_all_records(MyDb &inventoryDB, MyDb &vendorDB)
 {
 
     // Get a cursor to the inventory db
-    Dbc *cursorp;
+    Dbc *cursorp = NULL;
     try {
         inventoryDB.getDb().cursor(NULL, &cursorp, 0);
 

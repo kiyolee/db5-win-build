@@ -52,7 +52,7 @@ hm_loop(args)
 	elect_args *ea;
 	hm_loop_args *ha;
 	machtab_t *tab;
-	thread_t elect_thr, *site_thrs, *tmp, tid;
+	thread_t elect_thr = NULL, *site_thrs, *tmp, tid = NULL;
 	repsite_t self;
 	u_int32_t timeout;
 	int eid, n, nsites, nsites_allocd;
