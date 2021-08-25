@@ -12,6 +12,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <ws2tcpip.h>
+#endif
+
 #include <db.h>
 #include "rep_base.h"
 #ifndef _SYS_QUEUE_H
@@ -421,56 +426,75 @@ get_connected_socket(machtab, progname, remotehost, port, is_open, eidp)
 	const char *progname, *remotehost;
 	int port, *is_open, *eidp;
 {
-	int ret;
-	socket_t s;
-	struct hostent *hp;
-	struct sockaddr_in si;
-	u_int32_t addr;
-	u_int16_t nport;
+	struct addrinfo hints;
+	struct addrinfo* paihost = NULL;
+	const struct addrinfo* pai;
+	socket_t s = -1;
 
 	*is_open = 0;
 
-	if ((hp = gethostbyname(remotehost)) == NULL) {
+	memset(&hints, 0, sizeof(hints));
+	hints.ai_family = AF_INET; /* IPv4 only */
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_protocol = 0;
+	hints.ai_flags = 0;
+
+	if (getaddrinfo(remotehost, NULL, &hints, &paihost) != 0) {
 		fprintf(stderr, "%s: host not found: %s\n", progname,
-		    strerror(net_errno));
+			strerror(net_errno));
 		return (-1);
 	}
 
-	if ((s = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
-		perror("can't create outgoing socket");
-		return (-1);
-	}
-	memset(&si, 0, sizeof(si));
-	memcpy((char *)&si.sin_addr, hp->h_addr, hp->h_length);
-	addr = ntohl(si.sin_addr.s_addr);
-	ret = machtab_add(machtab, s, addr, port, eidp);
-	if (ret == EEXIST) {
-		*is_open = 1;
-		closesocket(s);
-		return (0);
-	} else if (ret != 0) {
-		closesocket(s);
-		return (-1);
-	}
+	/* Do *not* return directly inside loop, freeaddrinfo() *must* be called. */
+	for (pai = paihost; pai != NULL; pai = pai->ai_next, s = -1)
+	{
+		int ret;
+		struct sockaddr_in si;
+		u_int32_t addr;
 
-	si.sin_family = AF_INET;
-	si.sin_port = htons((unsigned short)port);
-	if (connect(s, (struct sockaddr *)&si, sizeof(si)) < 0) {
+		if (pai->ai_addrlen != sizeof(si.sin_addr)) continue; /* Just in case */
+
+		if ((s = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
+			perror("can't create outgoing socket");
+			s = -1;
+			break;
+		}
+
+		memset(&si, 0, sizeof(si));
+		memcpy((char *)&si.sin_addr, pai->ai_addr, pai->ai_addrlen);
+		addr = ntohl(si.sin_addr.s_addr);
+		ret = machtab_add(machtab, s, addr, port, eidp);
+		if (ret != 0) {
+			closesocket(s);
+			if (ret == EEXIST) {
+				*is_open = 1;
+				s = 0;
+			} else {
+				s = -1;
+			}
+			break;
+		}
+
+		si.sin_family = AF_INET;
+		si.sin_port = htons((unsigned short)port);
+		if (connect(s, (struct sockaddr *)&si, sizeof(si)) == 0) {
+			/*
+			 * The first thing we send on the socket is our (listening) port
+			 * so the site we are connecting to can register us correctly in
+			 * its machtab.
+			 */
+			u_int16_t nport = htons(myport);
+			writesocket(s, &nport, 2);
+			break;
+		}
+
 		fprintf(stderr, "%s: connection failed: %s\n",
-		    progname, strerror(net_errno));
+			progname, strerror(net_errno));
 		(void)machtab_rem(machtab, *eidp, 1);
-		return (-1);
 	}
 
-	/*
-	 * The first thing we send on the socket is our (listening) port
-	 * so the site we are connecting to can register us correctly in
-	 * its machtab.
-	 */
-	nport = htons(myport);
-	writesocket(s, &nport, 2);
-
-	return (s);
+	if (paihost) freeaddrinfo(paihost);
+	return s;
 }
 
 /*
