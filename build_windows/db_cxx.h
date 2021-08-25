@@ -1388,6 +1388,10 @@ protected:
 // Exception classes
 //
 
+#if defined(_MSC_VER) && _MSC_VER >= 1900
+#pragma warning(push)
+#pragma warning(disable: 4275) // non dll-interface class used as base for dll-interface class
+#endif
 // Almost any error in the DB library throws a DbException.
 // Every exception should be considered an abnormality
 // (e.g. bug, misuse of DB, file system error).
@@ -1415,6 +1419,9 @@ private:
 	int err_;                   // errno
 	DbEnv *dbenv_;
 };
+#if defined(_MSC_VER) && _MSC_VER >= 1900
+#pragma warning(pop)
+#endif
 
 //
 // A specific sort of exception that occurs when
