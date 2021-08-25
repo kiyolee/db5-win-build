@@ -158,6 +158,9 @@ static int sqlite3_os_type = 0;
 #if SQLITE_OS_WINCE
 # define isNT()  (1)
 #else
+#if 1 /* Always Windows/NT these days */
+# define isNT()  (1)
+#else
   static int isNT(void){
     if( sqlite3_os_type==0 ){
       OSVERSIONINFO sInfo;
@@ -167,6 +170,7 @@ static int sqlite3_os_type = 0;
     }
     return sqlite3_os_type==2;
   }
+#endif
 #endif /* SQLITE_OS_WINCE */
 
 /*

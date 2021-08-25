@@ -22,7 +22,10 @@ __os_is_winnt()
 #ifdef DB_WINCE
 	return (1);
 #else
-	static int __os_type = -1;
+#if 1 /* Always Windows/NT these days */
+    return (1);
+#else
+    static int __os_type = -1;
 
 	/*
 	 * The value of __os_type is computed only once, and cached to
@@ -36,6 +39,7 @@ __os_is_winnt()
 	}
 	return (__os_type);
 #endif
+#endif
 }
 
 /*
@@ -48,7 +52,10 @@ __os_fs_notzero()
 #ifdef DB_WINCE
 	return (1);
 #else
-	static int __os_notzero = -1;
+#if 1 /* Always Windows/NT these days */
+    return (0);
+#else
+    static int __os_notzero = -1;
 	OSVERSIONINFO osvi;
 
 	/*
@@ -91,6 +98,7 @@ __os_fs_notzero()
 			__os_notzero = 1;		/* Not Windows/NT */
 	}
 	return (__os_notzero);
+#endif
 #endif
 }
 
