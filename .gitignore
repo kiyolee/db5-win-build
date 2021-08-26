@@ -1,4 +1,6 @@
 *.VC.db
+*.db
+*.db-journal
 *.log
 *.opensdf
 *.sdf
