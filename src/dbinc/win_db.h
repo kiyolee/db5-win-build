@@ -33,6 +33,10 @@
 #include <tchar.h>
 #include <time.h>
 
+#if defined(_MSC_VER) && _MSC_VER >= 1600
+#include <stdint.h>
+#endif
+
 /*
  * To build Tcl interface libraries, the include path must be configured to
  * use the directory containing <tcl.h>, usually the include directory in

@@ -54,6 +54,7 @@
 #endif
 
 #if defined(HAVE_64BIT_TYPES)
+#if defined(_MSC_VER) && _MSC_VER < 1600
 /*
  * Override the system's 64-bit min/max constants.  AIX's 32-bit compiler can
  * handle 64-bit values, but the system's constants don't include the LL/ULL
@@ -72,9 +73,15 @@
 #define	INT64_MIN	(-INT64_MAX-1)
 #define	UINT64_MAX	18446744073709551615ULL
 #endif	/* DB_WIN32 */
+#endif
 
+#if defined(_MSC_VER) && _MSC_VER < 1400
 #define	INT64_FMT	"%I64d"
 #define	UINT64_FMT	"%I64u"
+#else
+#define	INT64_FMT	"%lld"
+#define	UINT64_FMT	"%llu"
+#endif
 #endif	/* HAVE_64BIT_TYPES */
 
 /*
