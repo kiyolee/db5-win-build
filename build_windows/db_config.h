@@ -187,7 +187,11 @@
 /* #undef HAVE_HSTRERROR */
 
 /* Define to 1 if you have the <inttypes.h> header file. */
+#if defined(_MSC_VER) && _MSC_VER >= 1800
+#define HAVE_INTTYPES_H 1
+#else
 /* #undef HAVE_INTTYPES_H */
+#endif
 
 /* Define to 1 if you have the `isalpha' function. */
 /* #undef HAVE_ISALPHA */
