@@ -132,7 +132,6 @@
     <ClCompile Include="..\..\src\btree\bt_stat.c" />
     <ClCompile Include="..\..\src\btree\bt_upgrade.c" />
     <ClCompile Include="..\..\src\btree\btree_auto.c" />
-    <ClCompile Include="..\..\src\clib\isalpha.c" />
     <ClCompile Include="..\..\src\clib\strsep.c" />
     <ClCompile Include="..\..\src\common\clock.c" />
     <ClCompile Include="..\..\src\common\crypto_stub.c" />

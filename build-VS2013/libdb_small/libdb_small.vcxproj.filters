@@ -183,9 +183,6 @@
     <ClCompile Include="..\..\src\btree\btree_auto.c">
       <Filter>Source Files\src\btree</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\clib\isalpha.c">
-      <Filter>Source Files\src\clib</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\clib\strsep.c">
       <Filter>Source Files\src\clib</Filter>
     </ClCompile>

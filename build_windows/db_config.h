@@ -194,7 +194,7 @@
 #endif
 
 /* Define to 1 if you have the `isalpha' function. */
-/* #undef HAVE_ISALPHA */
+#define HAVE_ISALPHA 1
 
 /* Define to 1 if you have the `isdigit' function. */
 #define HAVE_ISDIGIT 1

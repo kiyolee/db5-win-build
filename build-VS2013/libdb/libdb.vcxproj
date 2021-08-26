@@ -158,7 +158,6 @@
     <ClCompile Include="..\..\src\btree\bt_upgrade.c" />
     <ClCompile Include="..\..\src\btree\bt_verify.c" />
     <ClCompile Include="..\..\src\btree\btree_auto.c" />
-    <ClCompile Include="..\..\src\clib\isalpha.c" />
     <ClCompile Include="..\..\src\clib\strsep.c" />
     <ClCompile Include="..\..\src\common\clock.c" />
     <ClCompile Include="..\..\src\common\db_byteorder.c" />
