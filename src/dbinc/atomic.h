@@ -69,8 +69,11 @@ typedef struct {
  * aligned 32-bit reads to be atomic even outside of explicit 'atomic' calls.
  * These have no memory barriers; the caller must include them when necessary.
  */
+#if !defined(__cplusplus) || (defined(_MSC_VER) && _MSC_VER < 1920)
+ /* Conflicts with STL <atomic> from VS2019 or later */
 #define	atomic_read(p)		((p)->value)
 #define	atomic_init(p, val)	((p)->value = (val))
+#endif
 
 #ifdef HAVE_ATOMIC_SUPPORT
 

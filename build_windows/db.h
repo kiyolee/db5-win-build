@@ -2813,7 +2813,10 @@ typedef struct {
 #define	fetch(a)	__db_dbm_fetch(a)
 #define	firstkey	__db_dbm_firstkey
 #define	nextkey(a)	__db_dbm_nextkey(a)
+#if !defined(__cplusplus) || (defined(_MSC_VER) && _MSC_VER < 1920)
+ /* Conflicts with STL <atomic> from VS2019 or later */
 #define	store(a, b)	__db_dbm_store(a, b)
+#endif
 
 /*******************************************************
  * Hsearch historic interface.
