@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\lang">
+      <UniqueIdentifier>{C4A534D0-F578-4641-6E09-C557FC466879}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql">
+      <UniqueIdentifier>{E8293B96-AC9A-4B8B-6AB3-3CADD54AC4A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\adapter">
+      <UniqueIdentifier>{7B59E88D-F8B1-41B2-214E-C5641F2616C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\generated">
+      <UniqueIdentifier>{5E38774C-937B-4D18-1672-FCC873F0463D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\sqlite">
+      <UniqueIdentifier>{04D54246-237D-4290-1101-DF09CCD152CC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\sqlite\ext">
+      <UniqueIdentifier>{5DA14457-21B2-411E-BB38-89F307048D7C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\sqlite\ext\fts3">
+      <UniqueIdentifier>{6D7EC0B6-7979-4985-6ED1-4270F32A636D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\sqlite\ext\rtree">
+      <UniqueIdentifier>{FF2AF6B4-68AF-4BA0-BD0B-72E6A622B713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\lang\sql\sqlite\src">
+      <UniqueIdentifier>{22F20808-3960-4727-2221-1CBA7E9B27E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lang\sql\adapter\backup.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\btmutex.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\btree.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\db_encrypt.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\db_pragma.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\db_sequence.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\db_shell.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\pager.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\pcache.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\pcache1.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\vacuum.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\adapter\wal.c">
+      <Filter>Source Files\lang\sql\adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\generated\opcodes.c">
+      <Filter>Source Files\lang\sql\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\generated\parse.c">
+      <Filter>Source Files\lang\sql\generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_aux.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_expr.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_hash.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_icu.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_porter.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_snippet.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_tokenizer.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_tokenizer1.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\fts3\fts3_write.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\fts3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\ext\rtree\rtree.c">
+      <Filter>Source Files\lang\sql\sqlite\ext\rtree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\alter.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\analyze.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\attach.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\auth.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\bitvec.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\build.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\callback.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\complete.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\ctime.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\date.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\delete.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\expr.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\fault.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\fkey.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\func.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\global.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\hash.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\insert.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\journal.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\legacy.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\loadext.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\main.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\malloc.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mem0.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mem1.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mem2.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\memjournal.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mutex.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mutex_noop.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\mutex_w32.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\notify.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\os.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\os_win.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\pragma.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\prepare.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\printf.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\random.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\resolve.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\rowset.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\select.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\status.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\table.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\tokenize.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\trigger.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\update.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\utf.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\util.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbe.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbeapi.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbeaux.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbeblob.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbemem.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vdbetrace.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\vtab.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\walker.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lang\sql\sqlite\src\where.c">
+      <Filter>Source Files\lang\sql\sqlite\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\build_windows\libdb.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
