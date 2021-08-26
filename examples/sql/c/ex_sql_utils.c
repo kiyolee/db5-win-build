@@ -7,6 +7,10 @@
 
 #include "ex_sql_utils.h"
 
+#ifdef _MSC_VER
+#include "io.h"
+#endif
+
 /*
  * This file contain the common utilities for sql examples. Includes:
  * 1. Setup/Clean up Enviornment.
@@ -265,14 +269,30 @@ load_table_from_file(db, data, silent)
 	FILE *fp;
 	int i, n;
 	char buf[SQL_COMMAND_SIZE];
+	const char *source_file = data.source_file;
 
-	sprintf(buf, "Load data source %s into database.",
-		data.source_file);
+#ifdef _MSC_VER
+	char fnbuf[BUF_SIZE];
+	const char *fn;
+
+	strcpy(fnbuf, "../../../");
+	fn = fnbuf + strlen(fnbuf);
+	strcpy(fn, data.source_file);
+	while (fn >= fnbuf) {
+		if (access(fn, 4) == 0) {
+			source_file = fn;
+			break;
+		}
+		fn -= 3;
+	}
+#endif
+
+	sprintf(buf, "Load data source %s into database.", source_file);
 	echo_info(buf);
 	/* Create table by given SQL expression. */
 	exec_sql_internal(db, data.sql_create, silent);
 
-	fp = open_csv_file(data.source_file);
+	fp = open_csv_file(source_file);
 	while (iterate_csv_file(fp, data.ncolumn) != 0) {
 		/* Get data line by line and put it into database. */
 		i = sprintf(buf, "INSERT INTO %s VALUES(", data.table_name);
