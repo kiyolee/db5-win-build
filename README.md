@@ -1,4 +1,4 @@
-# zlib-win-build
+# db5-win-build
 
 Berkeley DB v5 Windows build with Visual Studio.
 
