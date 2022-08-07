@@ -122,7 +122,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_base_iterator.h" />
-    <ClInclude Include="..\..\lang\cxx\stl\dbstl_common.h" />
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_container.h" />
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_dbc.h" />
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_dbt.h" />

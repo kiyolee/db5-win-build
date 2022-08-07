@@ -44,9 +44,6 @@
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_base_iterator.h">
       <Filter>Header Files\lang\cxx\stl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\lang\cxx\stl\dbstl_common.h">
-      <Filter>Header Files\lang\cxx\stl</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\lang\cxx\stl\dbstl_container.h">
       <Filter>Header Files\lang\cxx\stl</Filter>
     </ClInclude>
