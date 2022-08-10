@@ -167,7 +167,6 @@ __db_check_chksum(env, hdr, db_cipher, chksum, data, data_len, is_hmac)
 {
 	int ret;
 	size_t sum_len;
-	u_int32_t hash4;
 	u_int8_t *mac_key, old[DB_MAC_KEY], new[DB_MAC_KEY];
 
 	/*
@@ -207,11 +206,25 @@ __db_check_chksum(env, hdr, db_cipher, chksum, data, data_len, is_hmac)
 	}
 
 	if (mac_key == NULL) {
+#if defined(_DEBUG) && defined(_M_X64) && defined(_MSC_VER) && _MSC_VER >= 1800
+		/*
+		 * Unfortunately VS2013 or later would wrongly complain that the following
+		 * LOG_HDR_SUM(0, ...) would overrun hash4 by 4 bytes, not recognising that
+		 * when first argument is 0 (NOT crypto), only 4 bytes would be written.
+		 */
+		u_int32_t _hash4[2] = { 0, 0 };
+		#define hash4 _hash4[0]
+#else
+		u_int32_t hash4;
+#endif
 		/* Just a hash, no MAC */
 		hash4 = __ham_func4(NULL, data, (u_int32_t)data_len);
 		if (hdr != NULL)
 			LOG_HDR_SUM(0, hdr, &hash4);
 		ret = memcmp((u_int32_t *)chksum, &hash4, sum_len) ? -1 : 0;
+#if defined(_DEBUG) && defined(_M_X64) && defined(_MSC_VER) && _MSC_VER >= 1800
+		#undef hash4
+#endif
 	} else {
 		__db_hmac(mac_key, data, data_len, new);
 		if (hdr != NULL)
