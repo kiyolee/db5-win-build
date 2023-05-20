@@ -450,10 +450,10 @@ dump_verbose_stats(dbp, config)
 		    (u_long)config->put_time.tv_sec, config->put_time.tv_nsec);
 
 	if (is_get_workload(config->workload) == 0)
-		printf("%s Time spent getting (%lu) (%s) items: %lu/%lu\n",
+		printf("%s Time spent getting (%llu) (%s) items: %lu/%lu\n",
 		    config->message[0] == '\0' ? "" : config->message,
-		    (u_long)config->pcount * ((config->gcount == 0) ?
-		    1 : config->gcount), config->ts,
+		    (unsigned long long)(config->pcount * ((config->gcount == 0) ?
+		    1 : config->gcount)), config->ts,
 		    (u_long)config->get_time.tv_sec, config->get_time.tv_nsec);
 
 	if (is_del_workload(config->workload) == 0)

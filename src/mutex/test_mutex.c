@@ -388,7 +388,7 @@ locker_wait()
 {
 #if defined(MUTEX_THREAD_TEST)
 	u_int i;
-	void *retp;
+	void *retp = NULL;
 
 	/* Wait for the threads to exit. */
 	for (i = 0; i < nthreads; i++) {
@@ -556,7 +556,7 @@ int
 wakeup_wait()
 {
 #if defined(MUTEX_THREAD_TEST)
-	void *retp;
+	void *retp = NULL;
 
 	/*
 	 * A file is created when the wakeup thread is no longer needed.
