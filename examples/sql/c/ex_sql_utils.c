@@ -273,7 +273,7 @@ load_table_from_file(db, data, silent)
 
 #ifdef _MSC_VER
 	char fnbuf[BUF_SIZE];
-	const char *fn;
+	char *fn;
 
 	strcpy(fnbuf, "../../../");
 	fn = fnbuf + strlen(fnbuf);
